@@ -28,6 +28,6 @@ public class Roman {
 
     public static Integer toArabic(String roman)
     {
-        return 1;
+        return roman.length();
     }
 }
