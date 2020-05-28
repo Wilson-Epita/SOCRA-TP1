@@ -25,4 +25,9 @@ public class Roman {
         Integer result = Integer.parseInt(decimal);
         return toRoman(result);
     }
+
+    public static Integer toArabic(String roman)
+    {
+        return 1;
+    }
 }
