@@ -21,7 +21,6 @@ public class Roman {
         var input_patern = "[0-9]+";
         if (!Pattern.matches(input_patern, decimal))
             return "";
-
         Integer result = Integer.parseInt(decimal);
         return toRoman(result);
     }
@@ -41,15 +40,16 @@ public class Roman {
                 return 10;
             case 'V':
                 return 5;
-            case 'I':
+            default :
                 return 1;
-            default:
-                return 0;
         }
     }
 
     public static Integer toArabic(String roman)
     {
+        var input_patern = "[MDCLXVI]+";
+        if (!Pattern.matches(input_patern, roman))
+            return -1;
         var res = 0;
 
         var roman_len = roman.length();
