@@ -12,46 +12,61 @@ import static org.mockito.Mockito.verify;
 
 public class RomanTest {
     @Test
-    public void toRomanSmallCases(){
-        var inputs = Arrays.asList(1, 7, 8, 9);
-        var outputs = Arrays.asList("I", "VII", "VIII", "IX");
-        for (var i = 0; i < inputs.size(); ++i) {
-            assert (Roman.toRoman(inputs.get(i)).equals(outputs.get(i)));
-        }
-    }
-    @Test
-    public void toRomanMiddleCases(){
-        var inputs = Arrays.asList(142, 263, 999);
-        var outputs = Arrays.asList("CXLII", "CCLXIII", "CMXCIX");
-        for (var i = 0; i < inputs.size(); ++i) {
-            assert (Roman.toRoman(inputs.get(i)).equals(outputs.get(i)));
-        }
+    public void toRomanConvert1(){
+            assert (Roman.toRoman(1).equals("I"));
     }
 
     @Test
-    public void toRomanBiggerCases(){
-        var inputs = Arrays.asList(1234, 2691, 3000);
-        var outputs = Arrays.asList("MCCXXXIV", "MMDCXCI", "MMM");
-        for (var i = 0; i < inputs.size(); ++i) {
-            assert (Roman.toRoman(inputs.get(i)).equals(outputs.get(i)));
-        }
+    public void toRomanConvert7(){
+        assert (Roman.toRoman(7).equals("VII"));
     }
 
     @Test
-    public void toRomanInvalidImputNumber(){
-        var inputs = Arrays.asList(-1, 3002, 35000);
-        for (var i = 0; i < inputs.size(); ++i) {
-            assert (Roman.toRoman(inputs.get(i)).equals(""));
-        }
+    public void toRomanConvert8(){
+        assert (Roman.toRoman(8).equals("VIII"));
     }
 
     @Test
-    public void imputToRomanFromString() {
-        var inputs = Arrays.asList("1", "2", "3");
-        var outputs = Arrays.asList("I", "II", "III");
-        for (var i = 0; i < inputs.size(); ++i) {
-            assert (Roman.inputToRoman(inputs.get(i)).equals(outputs.get(i)));
-        }
+    public void toRomanConvert9(){
+        assert (Roman.toRoman(9).equals("IX"));
+    }
+    @Test
+    public void toRomanConvert142(){
+        assert (Roman.toRoman(142).equals("CXLII"));
     }
 
+    @Test
+    public void toRomanConvert2691(){
+        assert (Roman.toRoman(2691).equals("MMDCXCI"));
+    }
+
+    @Test
+    public void toRomanNegativeNumber(){
+        assert (Roman.toRoman(-1).equals(""));
+    }
+
+    @Test
+    public void toRomanOutOfRange(){
+        assert (Roman.toRoman(3002).equals(""));
+    }
+
+    @Test
+    public void imputToRomanFromString1() {
+        assert (Roman.inputToRoman("1").equals("I"));
+    }
+
+    @Test
+    public void inputToRomanWithNegativeValue(){
+        assert (Roman.inputToRoman("-1").equals(""));
+    }
+
+    @Test
+    public void inputToRomanWithOutOfRangeValue(){
+        assert (Roman.inputToRoman("5004").equals(""));
+    }
+
+    @Test
+    public void inputToRomanWithInvalidInput(){
+        assert (Roman.inputToRoman("Bonjour").equals(""));
+    }
 }
