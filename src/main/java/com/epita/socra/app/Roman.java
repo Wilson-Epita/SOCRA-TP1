@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Roman {
-    public String toRoman(int decimal)
+    public static String toRoman(int decimal)
     {
         var unit = new ArrayList<String>(Arrays.asList("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"));
         var dec = new ArrayList<String>(Arrays.asList("", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"));
