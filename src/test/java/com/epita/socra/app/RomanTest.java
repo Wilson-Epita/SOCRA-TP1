@@ -46,11 +46,12 @@ public class RomanTest {
     }
 
     @Test
-    public void toRomanFromString() {
+    public void imputToRomanFromString() {
         var inputs = Arrays.asList("1", "2", "3");
         var outputs = Arrays.asList("I", "II", "III");
         for (var i = 0; i < inputs.size(); ++i) {
             assert (Roman.inputToRoman(inputs.get(i)).equals(outputs.get(i)));
         }
     }
+
 }

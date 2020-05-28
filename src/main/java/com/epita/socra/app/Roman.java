@@ -17,6 +17,7 @@ public class Roman {
     }
 
     public static String inputToRoman(String decimal){
-        return "not implemented yet";
+        Integer result = Integer.parseInt(decimal);
+        return toRoman(result);
     }
 }
