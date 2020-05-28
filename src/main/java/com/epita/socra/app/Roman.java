@@ -15,4 +15,8 @@ public class Roman {
         var mill = new ArrayList<String>(Arrays.asList("", "M", "MM", "MMM"));
         return mill.get(decimal / 1000) + cent.get((decimal / 100) % 10) + dec.get((decimal / 10) % 10) + unit.get(decimal % 10);
     }
+
+    public static String inputToRoman(String decimal){
+        return "not implemented yet";
+    }
 }
