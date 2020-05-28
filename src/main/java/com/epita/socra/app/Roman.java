@@ -6,6 +6,9 @@ import java.util.Arrays;
 public class Roman {
     public static String toRoman(int decimal)
     {
+        if (decimal < 0 || decimal > 3000)
+            return "";
+
         var unit = new ArrayList<String>(Arrays.asList("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"));
         var dec = new ArrayList<String>(Arrays.asList("", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"));
         var cent = new ArrayList<String>(Arrays.asList("", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"));
