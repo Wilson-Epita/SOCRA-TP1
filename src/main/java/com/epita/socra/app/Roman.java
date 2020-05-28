@@ -26,8 +26,46 @@ public class Roman {
         return toRoman(result);
     }
 
+    private static int roman_digit_value(char digit){
+        switch (digit) {
+            case 'M':
+                return 1000;
+
+            case 'D':
+                return 500;
+            case 'C':
+                return 100;
+            case 'L':
+                return 50;
+            case 'X':
+                return 10;
+            case 'V':
+                return 5;
+            case 'I':
+                return 1;
+            default:
+                return 0;
+        }
+    }
+
     public static Integer toArabic(String roman)
     {
-        return roman.length();
+        var res = 0;
+
+        var roman_len = roman.length();
+        for (var i = 0; i < roman_len; ++i) {
+            var current_char_value = roman_digit_value(roman.charAt(i));
+            res += current_char_value;
+
+            if (i + 1 < roman_len) {
+                var next_char_value = roman_digit_value(roman.charAt(i + 1));
+                if (next_char_value > current_char_value) {
+                    res += next_char_value - 2 * current_char_value;
+                    ++i;
+                }
+            }
+        }
+        return res;
     }
+
 }

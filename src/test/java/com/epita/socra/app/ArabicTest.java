@@ -18,4 +18,8 @@ public class ArabicTest {
         assert (Roman.toArabic("III").equals(3));
     }
 
+    @Test
+    public void toArabicConvertIV() {
+        assert (Roman.toArabic("IV").equals(4));
+    }
 }
