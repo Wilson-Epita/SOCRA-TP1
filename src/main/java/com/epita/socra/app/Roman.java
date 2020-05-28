@@ -2,6 +2,7 @@ package com.epita.socra.app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class Roman {
     public static String toRoman(int decimal)
@@ -17,6 +18,10 @@ public class Roman {
     }
 
     public static String inputToRoman(String decimal){
+        var input_patern = "[0-9]+";
+        if (!Pattern.matches(input_patern, decimal))
+            return "";
+
         Integer result = Integer.parseInt(decimal);
         return toRoman(result);
     }
